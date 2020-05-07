@@ -14,22 +14,24 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 
 // Temporal
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    // AppRoutingModule,
+    PagesModule,
+    App_ROUTES,
+    RouterModule,
+    HttpClientModule
+  ],
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent
-  ],
-  imports: [
-    BrowserModule,
-    // AppRoutingModule,
-    PagesModule,
-    App_ROUTES,
-    FormsModule,
-    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
