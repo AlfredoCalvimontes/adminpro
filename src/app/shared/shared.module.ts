@@ -6,13 +6,15 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
 @NgModule ({
     imports: [
         RouterModule,        // Es algo que hay que importar si se quiere usar reuterLink en paginas dentro de la seccion
-        CommonModule
+        CommonModule,
+        PipesModule
     ],
     declarations: [
         BreadcrumbsComponent,
