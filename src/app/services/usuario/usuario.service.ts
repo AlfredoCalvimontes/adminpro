@@ -90,7 +90,7 @@ export class UsuarioService {
     return this.http.post( url, usuario )
               .pipe(
                 map( (resp: any) => {
-
+                    console.log( resp.token );
                     this.guardarStorage( resp.id, resp.token, resp.usuario );
                     return true;
 
@@ -118,7 +118,7 @@ export class UsuarioService {
 
   }
 
-  actualizarUsuario( usuario:Usuario) {
+  actualizarUsuario( usuario: Usuario) {
 
     let url = URL_SERVICIOS + '/usuario/' + usuario._id;
     url += '?token=' + this.token;
@@ -127,6 +127,7 @@ export class UsuarioService {
          .pipe(
             map( (resp: any) => {
 
+                //  Se verifica si es el mismo usuario actual para actualizarlo y se vea el cambio de imagen y nombre en tiempo real.
               if ( usuario._id === this.usuario._id ) {
                 let usuarioDB: Usuario = resp.usuario;
                 this.guardarStorage( usuarioDB._id, this.token, usuarioDB );
@@ -166,7 +167,7 @@ export class UsuarioService {
 
   }
 
-  caragarUsuarios( desde: number = 0) {
+  cargarUsuarios( desde: number = 0) {
 
     let url = URL_SERVICIOS + '/usuario?desde=' + desde;
     return this.http.get( url );

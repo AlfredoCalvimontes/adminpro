@@ -41,7 +41,7 @@ export class UsuariosComponent implements OnInit {
 
     this.cargando = true;
 
-    this._usuarioService.caragarUsuarios( this.desde )
+    this._usuarioService.cargarUsuarios( this.desde )
           .subscribe( (resp: any) => {
 
             this.totalRegistros = resp.total;
@@ -55,7 +55,6 @@ export class UsuariosComponent implements OnInit {
   cambiarDesde( valor: number ) {
 
     let desde = this.desde + valor;
-    console.log(desde);
 
     if ( desde >= this.totalRegistros ) {
       return;
@@ -98,7 +97,7 @@ export class UsuariosComponent implements OnInit {
         icon: 'error'
        });
 
-       return;
+      return;
     }
 
     Swal.fire({
