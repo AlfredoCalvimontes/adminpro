@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { App_ROUTES } from './app.routes';
 
 // Modulos
-import { PagesModule } from './pages/pages.module';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -16,6 +15,8 @@ import { RegisterComponent } from './login/register.component';
 // Temporal
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [
@@ -23,15 +24,16 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     // AppRoutingModule,
-    PagesModule,
     App_ROUTES,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

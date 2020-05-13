@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { ModalUploadComponent } from '../componentes/modal-upload/modal-upload.component';
 
 
 
@@ -20,13 +21,15 @@ import { PipesModule } from '../pipes/pipes.module';
         BreadcrumbsComponent,
         HeaderComponent,
         SidebarComponent,
-        NopagefoundComponent
+        NopagefoundComponent,
+        ModalUploadComponent
     ],
     exports: [
         BreadcrumbsComponent,
         HeaderComponent,
         SidebarComponent,
-        NopagefoundComponent
+        NopagefoundComponent,
+        ModalUploadComponent
     ]
 })
 export class SharedModule{ }
